@@ -1,0 +1,131 @@
+<nav class="nav">
+    <div class="container">
+        <div class="logo">
+           
+        </div>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a routerLink="/courses" class="active">COURSES</a></li>
+                <li><a routerLink="/wishlist">MY WISHLIST</a></li>
+                <li><a routerLink="/cart"><img src="assets/image/Cart.svg" class="cart-icon"></a></li>
+                <li><a routerLink="/profile"><img src="assets/image/Profile.png" class="cart-icon"></a></li>
+            </ul>
+        </div>
+        <span class="navTrigger">
+            <img src="assets/image/Menu.svg">
+        </span>
+    </div>
+</nav>
+
+
+<section class="home"></section>
+<section class="hero">
+    <div class="text-container">
+        <img src="assets/image/BG@3x.png" height="100%" width="100%">
+        <div class="centered">
+            My Profile
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="profile-container">
+
+        <img src="assets/image/Mask Group 2.png" class="profile-photo" height="200" width="200">
+
+        <div class="profile-form">
+            <form class="form-profile" (ngSubmit) ="onSubmit(formprofile)" #formprofile = "ngForm">
+                <div class="row">
+                    
+               
+                <div style="color:red; font-weight:bold;" *ngIf="name.touched && !name.valid"> Display Name is required</div>
+                <div style="color:red; font-weight:bold;" *ngIf="fname.touched && !fname.valid"> First Name is required</div>
+                </div>
+                <label for="name">Display Name
+                </label>
+                <input type="text" id="name" required ngModel name="name" #name="ngModel"  placeholder="Display Name">
+                <label>First Name</label>
+                <input type="text" id="fname" required ngModel name="fname" #fname="ngModel" placeholder="First Name">
+                <label>Last Name</label>
+                <input type="text" id="lname" ngModel #lname="ngModel" name="lname" placeholder="Last Name">
+                <br>
+                <div style="color:red; font-weight:bold;" *ngIf="ay.touched && !ay.valid"> About Yourself should not exceed than {{ay.errors.maxlength.requiredLength}}</div>
+                <label for="ay">About Yourself</label>
+                <br>
+                <textarea id="ay" rows="6" cols="60" ngModel name="ay" #ay="ngModel" maxlength="100" ></textarea>
+                <br>
+                <label>Your Area of Interest</label>
+                <br>
+
+                <label for="designer" class="check-container"> Designer
+                    <input type="checkbox" id="designer" ngModel #designer="ngModel" name="designer" value="designer">
+                    <span class="checkmark"></span>
+                </label><br>
+                <label for="developer" class="check-container"> Developer
+                    <input type="checkbox" id="developer" ngModel #developer="ngModel" name="developer" value="developer" checked>
+                    <span class="checkmark"></span>
+                </label><br>
+                <label for="manager" class="check-container"> Project Manager
+                    <input type="checkbox" id="manager" ngModel #manager="ngModel" name="manager" value="manager">
+                    <span class="checkmark"></span>
+                </label><br>
+
+                <label for="sales" class="check-container"> Sales
+                    <input type="checkbox" id="sales" ngModel #sales="ngModel" name="sales" value="sales">
+                    <span class="checkmark"></span>
+                </label>
+                <br>
+                <label>Are you a student or Professional</label>
+                <br>
+                <div>
+                    <label for="student" class="radio-container">Student
+                        <input type="radio" id="student" name="work" ngModel #work="ngModel" value="student" onclick="show1();" checked>
+                        <span class="radio-checkmark"></span>
+                    </label>
+
+                    <label for="profession" class="radio-container">Professional
+                        <input type="radio" id="profession" name="work" ngModel #work="ngModel" value="professional" onclick="show2();">
+                        <span class="radio-checkmark"></span>
+                    </label>
+                </div>
+                <br>
+                <div id="professional" class="hide">
+                    <br>
+                    <label>How much of experience you have?</label>
+                    <br><br>
+                    <input type="radio" id="one" name="workex" ngModel #workex="ngModel" value="one">
+                      <label for="one">0-5</label>
+                    <input type="radio" id="five" name="workex" ngModel #workex="ngModel" value="five" checked>
+                      <label for="five">5-10</label>
+                    <input type="radio" id="ten" name="workex" ngModel #workex="ngModel" value="ten">
+                      <label for="ten">10 & Above</label>
+                    <br><br>
+                    <label>What is your expertise?</label>
+                    <br><br>
+                    <input type="radio" id="java" name="skill" ngModel #skill="ngModel" value="java">
+                      <label for="java">Java</label>
+                    <input type="radio" id="react" name="skill" ngModel #skill="ngModel" value="react" checked>
+                      <label for="react">React</label>
+                    <input type="radio" id="backend" name="skill" ngModel #skill="ngModel" value="backend">
+                      <label for="backend">Backend</label>
+                    <br><br>
+                    <label class="role">Mention your role
+
+                    </label>
+                    <br>
+                    <div style="color:red; font-weight:bold;" *ngIf="!role.valid"> Mention Your Role should not exceed than
+                        {{role.errors.maxlength.requiredLength}}</div>
+                    <input type="text" id="role" placeholder="Your Role" ngModel name="role" #role="ngModel" maxlength="200" >
+                    <br>
+
+                </div>
+
+                <input type="submit" value="SAVE" [disabled]="formprofile.invalid" class="save-btn" id="addtocart">
+            </form>
+        </div>
+    </div>
+</section>
+
+
+
+
+

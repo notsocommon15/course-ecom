@@ -1,0 +1,112 @@
+<nav class="nav">
+    <div class="container">
+        <div class="logo">
+            
+        </div>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a routerLink="/courses" class="active">COURSES</a></li>
+                <li><a routerLink="/wishlist">MY WISHLIST</a></li>
+                <li><a routerLink="/cart"><img src="assets/image/Cart.svg" class="cart-icon"></a></li>
+                <li><a routerLink="/profile"><img src="assets/image/Profile.png" class="cart-icon"></a></li>
+            </ul>
+        </div>
+        <span class="navTrigger">
+            <img src="assets/image/Menu.svg">
+        </span>
+    </div>
+</nav>
+
+<section class="home"></section>
+<section class="hero">
+    <div class="text-container">
+        <img src="assets/image/BG@3x.png" height="100%" width="100%">
+        <div class="centered">
+            Discover Latest Courses on React
+        </div>
+    </div>
+</section>
+
+<section class="container">
+    <div class="selection">
+
+        <div class="select">
+
+            <label class="title-select">All Courses <strong>> Select Courses</strong></label>
+            
+        </div>
+</div>
+   
+</section>
+
+<section class="hero-section">
+
+<div class="name-video" >
+    <div class="name-section">
+        <div class="course-name">{{course.title}}</div>
+        <div class="course-name2">{{course.title}}</div>
+        <div class="creator">{{course.course_creator}}</div>
+        <div class="tags">
+            <span class="tag" style="background-color:white;color:black;">{{course.tags[0]}}</span>
+            <span class="tag" style="background-color:white;color:black;">{{course.tags[1]}}</span>
+        </div>
+    </div>
+    <div class="video-section">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kuJNVKHHpGk" title="YouTube video player"
+            frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen style="float:right;"></iframe>
+
+    </div>
+    <div class="course-details">
+        <h3 style="color: #4E4E4E;">Course Details</h3>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+           
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+           
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+            
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+         
+        </p>
+    
+    </div>
+    <div class="price-details"> 
+        <div class="discount-price"> 
+            Rs {{course.price - course.discount}}/-
+        </div>
+        <div class="price" style="font-size: 1.2em;">
+            Rs {{course.price}}/-
+        </div>
+        <div class="timer">
+            8 hours left of this price!
+        </div>
+        <div class="buttons">
+            <div>
+            <a class="addtocart" (click) = "addToCart(course)">
+                Add to Cart
+            </a>
+            </div>
+            <div>
+            <a class="addtowishlist" (click) = "addToWishlist(course)"> 
+                Add to Wishlist
+            </a>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="details-section">
+   
+    
+</div>
+</section>

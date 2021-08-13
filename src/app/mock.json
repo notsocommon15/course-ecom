@@ -1,0 +1,49 @@
+{
+  "courses":[
+    {
+      "id": "PCG8363041",
+      "title": "React",
+      "course_creator": "Joseph",
+      "tags": ["React","React"],
+      "price": 850,
+      "discount": 287,
+      "cart": true
+    },
+    {
+      "id": "PCG8363042",
+      "title": "Learn Angular Basics",
+      "course_creator": "Marie",
+      "tags": ["Angular","Angular"],
+      "price": 700,
+      "discount": 0,
+      "cart": true
+    },
+    {
+      "id": "PCG8363043",
+      "title": "How to develop web pages using HTML,CSS",
+      "course_creator": "John",
+      "tags": ["HTML","CSS"],
+      "price": 850,
+      "discount": 0,
+      "cart": false
+    },
+    {
+      "id": "PCG8363044",
+      "title": "Design web pages and many more using Figma",
+      "course_creator": "Arpit",
+      "tags": ["Adobe","Figma"],
+      "price": 850,
+      "discount": 287,
+      "cart": false
+    },
+    {
+      "id": "PCG8363045",
+      "title": "Nodejs basics create weather app",
+      "course_creator": "Charles",
+      "tags": ["JS","Node"],
+      "price": 850,
+      "discount": 100,
+      "cart": false
+    }
+  ]
+}

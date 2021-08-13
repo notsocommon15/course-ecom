@@ -1,0 +1,109 @@
+<nav class="nav">
+    <div class="container">
+        <div class="logo">
+           
+        </div>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a routerLink="/courses" class="active">COURSES</a></li>
+                <li><a routerLink="/wishlist">MY WISHLIST</a></li>
+                <li><a routerLink="/cart"><img src="assets/image/Cart.svg" class="cart-icon"></a></li>
+                <li><a routerLink="/profile"><img src="assets/image/Profile.png" class="cart-icon"></a></li>
+            </ul>
+        </div>
+        <span class="navTrigger">
+            <img src="assets/image/Menu.svg">
+        </span>
+    </div>
+</nav>
+   
+   <section class="home">
+    </section>
+    <section class="hero">
+        <div class="text-container">
+            <img src="assets/image/BG@3x.png" height="100%" width="100%">
+            <div class="centered">
+                Shopping Cart
+            </div>
+        </div>
+    </section>
+
+    <section class="container">
+        <div class="select">
+            <label class="title-select"><strong>{{items.length}} Courses in Cart</strong></label>
+        </div>
+        <div class="selection">
+            <div class="course-list" id="cartlist">
+                <div *ngFor="let course of items" class="courses">
+                    <div class="course-item"><img
+                            src="https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80"
+                            height="40" width="40"></div>
+                    <div class="course-item"> <strong>{{course.title}} </strong>
+                        <div class="course-item instructor"> {{course.course_creator}} </div>
+                    </div>
+                    <div class="course-item discounted"> Rs {{course.price - course.discount}}/-</div>
+                    <div class="course-item"><a (click)="moveToWishlist(course)">Move To Wishlist</a></div>
+                    <div class="course-item"><a (click)="removeFromCart(course)"><img src="./assets/image/Delete.svg"></a></div>
+                </div>
+
+            </div>
+            
+
+            <div class="recommended">
+                <p class="recommended-title">Recommended Courses</p>
+                <div class="courses">
+                    <div class="course-item"><img
+                            src="https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80"
+                            height="40" width="40"></div>
+                    <div class="course-item"> <strong>Responsive Design Course XYZ How to design responsive
+                            templates</strong>
+                        <div class="tags">
+                            <span class="tag">React</span>
+                            <span class="tag">React</span>
+                        </div>
+                    </div>
+                    <div class="course-item">Joseph Marie</div>
+                    <div class="course-item"> </div>
+                    <div class="course-item discounted"> Rs 563/-</div>
+                    <div class="course-item price"> Rs 923/- </div>
+                    <div class="course-item"><a href="#" id="addtocart">ADD TO CART</a></div>
+                    <div class="course-item">></div>
+                </div>
+                <div class="courses">
+                    <div class="course-item"><img
+                            src="https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80"
+                            height="40" width="40"></div>
+                    <div class="course-item"> <strong>Responsive Design Course XYZ How to design responsive
+                            templates</strong>
+                        <div class="tags">
+                            <span class="tag">React</span>
+                            <span class="tag">React</span>
+                        </div>
+                    </div>
+                    <div class="course-item">Joseph Marie</div>
+                    <div class="course-item"> </div>
+                    <div class="course-item discounted"> Rs 563/-</div>
+                    <div class="course-item price"> Rs 923/- </div>
+                    <div class="course-item"><a href="#" id="addtocart">ADD TO CART</a></div>
+                    <div class="course-item">></div>
+                </div>
+            </div>
+        </div>
+        <div class="cart-search">
+            <div id="cart-table">
+                <div class="cart-value">
+                    <p class="text-value">Total Amount</p>
+                    <p class="total-value">Rs {{grandTotal - grandDiscount}}/-</p>
+                    <p class="text-discount">You have saved Rs {{grandDiscount}}/-</p>
+                    <a (click) = "checkout()" id="checkout">CHECKOUT</a>
+                </div>
+
+            </div>
+        </div>
+    
+    </section>
+
+
+    
+    
+

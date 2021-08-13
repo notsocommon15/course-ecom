@@ -1,0 +1,49 @@
+{
+  "courses": [
+    {
+      "id": "PCG8363042",
+      "title": "Responsive Design Course XYZ How to design responsive templates",
+      "course_creator": "Joseph Marie",
+      "tags": ["React","React"],
+      "price": 850,
+      "discount": 287,
+      "cart": true
+    },
+    {
+      "id": "PCG8363042",
+      "title": "Responsive Design Course XYZ How to design responsive templates",
+      "course_creator": "Joseph Marie",
+      "tags": ["React","React"],
+      "price": 700,
+      "discount": 0,
+      "cart": true
+    },
+    {
+      "id": "PCG8363042",
+      "title": "Responsive Design Course XYZ How to design responsive templates",
+      "course_creator": "Joseph Marie",
+      "tags": ["React","React"],
+      "price": 850,
+      "discount": 0,
+      "cart": false
+    },
+    {
+      "id": "PCG8363042",
+      "title": "Responsive Design Course XYZ How to design responsive templates",
+      "course_creator": "Joseph Marie",
+      "tags": ["React","React"],
+      "price": 850,
+      "discount": 287,
+      "cart": false
+    },
+    {
+      "id": "PCG8363042",
+      "title": "Responsive Design Course XYZ How to design responsive templates",
+      "course_creator": "Joseph Marie",
+      "tags": ["React","React"],
+      "price": 850,
+      "discount": 100,
+      "cart": false
+    }
+  ]
+}

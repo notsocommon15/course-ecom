@@ -1,0 +1,99 @@
+
+<nav class="nav">
+    <div class="container">
+        <div class="logo">
+           
+        </div>
+        <div id="mainListDiv" class="main_list">
+            <ul class="navlinks">
+                <li><a routerLink="/courses" class="active">COURSES</a></li>
+                <li><a routerLink="/wishlist">MY WISHLIST</a></li>
+                <li><a routerLink="/cart"><img src="assets/image/Cart.svg" class="cart-icon"></a></li>
+                <li><a routerLink="/profile"><img src="assets/image/Profile.png" class="cart-icon"></a></li>
+            </ul>
+        </div>
+        <span class="navTrigger">
+            <img src="assets/image/Menu.svg">
+        </span>
+    </div>
+</nav>
+<section class="home"></section>
+<section class="hero">
+    <div class="text-container">
+        <img src="assets/image/BG@3x.png" height="100%" width="100%">
+        <div class="centered">
+            Discover Latest Courses on React
+        </div>
+    </div>
+</section>
+<section class="container">
+    <div class="selection">
+
+        <div class="select">
+
+            <label class="title-select"><strong>Select Courses</strong></label>
+            <select class="sort" [(ngModel)]="SortOrder">
+                <option value="" selected>Course Price</option>
+                <option value = "asc">Low To High</option>
+                <option value = "desc">High To Low</option>
+            </select>
+        </div>
+
+        <div class="course-list" id="courselist">
+            <div *ngFor="let course of courses|filter: searchCourse |filtersort: ['price', 'discount',SortOrder]" class="courses">
+                <div class="course-item"><img
+                        src="https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80"
+                        height="40" width="40"></div>
+                <div class="course-item"> <a style="text-decoration:none;color:black;" title="course.title + ' details'" routerLink="/courses/{{course.id}}"><strong>{{course.title}} </strong></a>
+                    <div class="tags">
+                        <span class="tag">{{course.tags[0]}}</span>
+                        <span class="tag">{{course.tags[1]}}</span>
+                    </div>
+                </div>
+                <div class="course-item"> {{course.course_creator}} </div>
+                <div class="course-item"> <a (click)="addToWishlist(course)"><i class="fa fa-star star"></i> </a></div>
+                <div class="course-item discounted"> Rs {{course.price - course.discount}}/-</div>
+                <div class="course-item price"> {{course.price}} </div>
+                <div class="course-item"><a  (click)="addToCart(course)" id="addtocart">ADD TO CART</a></div>
+                <div class="course-item">></div>
+            </div>
+        </div>
+    </div>
+    <div class="cart-search">
+        <form id="example" style="margin:auto;max-width:300px">
+            <input type="text"  placeholder="Search.." name="searchCourse" [(ngModel)] = "searchCourse" >
+            <button type="submit"><img src="assets/image/Search.svg"></button>
+        </form>
+        <div id="table">
+
+            <div class="sidecart-title">
+                <p><strong>Your Cart Details</strong></p>
+                <hr>
+            </div>
+
+            <div class="cart-items">
+                <div *ngFor="let course of items" class="side-cart-item">
+                    <div class="img-title">
+                        <div class="img"><img src ="https://images.unsplash.com/photo-1498550744921-75f79806b8a7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b0f6908fa5e81286213c7211276e6b3d&auto=format&fit=crop&w=1500&q=80" height="40" width="40"></div>
+                        <div class="ctitle">{{course.title}}</div>
+                        
+                    </div>
+                    <div class="cprice">Rs {{course.price - course.discount}}/-</div>
+                    <br><br>
+                    <hr>
+                </div>
+                <p *ngIf="items.length == 0">Your cart is empty right now. Please add courses in the cart from the list</p>
+
+            </div>
+            <div class="cart-value">
+                <hr>
+                <p class="text-value">Total Cart Value</p>
+                <p><span  class="total-value">Rs {{grandTotal - grandDiscount}}/- </span> <a class="checkout-link" routerLink="/cart"> GO TO CHECKOUT </a></p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
